@@ -5,10 +5,10 @@
   background: linear-gradient(to bottom,rgba(255,212,84,0.9),rgba(255,248,115,0.9));
   position: absolute;
   z-index: 3000;
-  top: 1em;
+  top: 50%;
   left: 1em;
   right: 1em;
-  bottom: 50%;
+  bottom: 5%;
   border: 1px solid black;
 }
 
