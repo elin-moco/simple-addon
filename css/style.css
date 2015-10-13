@@ -34,3 +34,11 @@
   display: block;
   cursor: pointer;
 }
+
+
+.fxos-banner span {
+  display: block;
+  background-color: #000;
+}
+
+

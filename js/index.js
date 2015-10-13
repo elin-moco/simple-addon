@@ -21,16 +21,28 @@ function initialize() {
     fxosBanner.classList.add('fxos-banner');
     var bannerText = document.createElement('p');
     var closeBtn = document.createElement('button');
+    var testBtn = document.createElement('span');
 
     fxosBanner.appendChild(bannerText);
     fxosBanner.appendChild(closeBtn);
     body.appendChild(fxosBanner);
 
     closeBtn.textContent = 'X';
-    bannerText.textContent = 'Wow, you have an extension installed!';
+    testBtn.textContent = 'Click me to getManifest';
+    bannerText.innerHTML = 'Wow, you have an extension installed!<br>';
+    bannerText.appendChild(testBtn);
 
     closeBtn.onclick = function() {
     	fxosBanner.parentNode.removeChild(fxosBanner);
+    }
+    testBtn.onclick = function() {
+      try {
+        var manifest = chrome.runtime.getManifest();
+        bannerText.innerHTML += manifest;
+      } catch(e) {
+        bannerText.innerHTML += '<span style="color: red;">Error!!</span>';
+        console.error(e);
+      }
     }
   }
 }
